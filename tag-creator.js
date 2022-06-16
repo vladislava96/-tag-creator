@@ -133,11 +133,19 @@ class TagCreator {
 
     set readonly(value) {
         this.tagForm.readOnly = value;
+        const addButton = document.querySelectorAll(".delete")
+        for (let btn of addButton) {
+            btn.disabled = valueInput == "install";
+        }
     } 
 
     changeReadonly(event) {
         const valueInput = event.target.value;
-        this.tagForm.readOnly = valueInput == "install";  
+        const addButton = document.querySelectorAll(".delete")
+        this.tagForm.readOnly = valueInput == "install";
+        for (let btn of addButton) {
+            btn.disabled = valueInput == "install";
+        }
     }
 }
 
