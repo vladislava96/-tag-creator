@@ -1,0 +1,58 @@
+
+.tag-creator {
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgb(228, 228, 228);
+    border-radius: 8px;
+}
+.container {
+    width: 400px;
+    margin: 0 auto;
+    text-align: right;
+}
+.form-tags-area {
+    display: flex;
+    width: 400px;
+    margin: 20px auto;
+    text-align: left;
+    border-radius: 5px;
+    background-color: white;
+}
+.tag {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    background-color: rgb(153, 244, 153);
+    border: solid 1px rgb(19, 164, 19);
+    border-radius: 5px;
+}
+.delete {
+    margin-left: 10px;
+    color: rgb(0, 96, 0);
+    background-color: rgb(153, 244, 153);
+    border: none;
+    border-radius: 50%;
+}
+.tag-value {
+    color: green;
+}
+.tag-form {
+    width: 100px;
+    height: 20px;
+    margin: 5px;
+    padding: 10px;
+    border: none; 
+}
+.tag-form:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+.add-button {
+    width: 60px;
+    height: 30px;
+    color: white;
+    background-color: rgb(241, 56, 93);
+    border: solid 1px crimson;
+    border-radius: 5px;
+}
