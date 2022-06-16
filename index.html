@@ -9,22 +9,24 @@
 </head>
 <body>
     <div class="tag-creator">
-        <div class="container">
+        <div class="tag-creator__form">
             <div class="form-tags-area">
-                <div class="tags-area">   
+                <div class="tags-area">
+                    <input class="tag-form" type="text" placeholder="Add a tag">    
                 </div>
-                <input class="tag-form" type="text" placeholder="Add a tag">
             </div>
             <button class="add-button">Add</button>
         </div>
-        <label>
-            <input id="install" type = "radio" name = "readonly" value = "install">
-            Установить readonly 
-        </label>
-        <label>
-            <input id="reset" type = "radio" name = "readonly" value = "reset" checked>
-            Сбросить readonly  
-        </label>
+        <div class="tag-creator__readonly">
+            <label>
+                <input id="install" type = "radio" name = "readonly" value = "install">
+                Установить readonly 
+            </label>
+            <label>
+                <input id="reset" type = "radio" name = "readonly" value = "reset" checked>
+                Сбросить readonly  
+            </label>
+        </div>
     </div>
     
     <script src="tag-creator.js"></script>

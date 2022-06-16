@@ -47,7 +47,7 @@ class TagCreator {
         tag.appendChild(tagValue);
         tag.appendChild(deleteButton);
 
-        this.tagsArea.appendChild(tag);
+        this.tagsArea.insertBefore(tag, this.tagForm);
 
         deleteButton.addEventListener('click', this.deleteTag);
     }
@@ -114,7 +114,7 @@ class TagCreator {
 
     set adding(value) {
         this.createTag(value)
-        
+
         this.arrayLocalStorage.push(value)
         localStorage.setItem("tag_editor_data", JSON.stringify(this.arrayLocalStorage))
     }

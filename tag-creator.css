@@ -6,13 +6,12 @@
     background-color: rgb(228, 228, 228);
     border-radius: 8px;
 }
-.container {
+.tag-creator__form {
     width: 400px;
     margin: 0 auto;
     text-align: right;
 }
 .form-tags-area {
-    display: flex;
     width: 400px;
     margin: 20px auto;
     text-align: left;
@@ -38,6 +37,7 @@
     color: green;
 }
 .tag-form {
+    display: inline-block;
     width: 100px;
     height: 20px;
     margin: 5px;
