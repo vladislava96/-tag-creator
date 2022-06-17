@@ -24,11 +24,12 @@ class TagCreator {
 
     fillTagFromLocalStorage() {
         const d = localStorage.getItem("tag_editor_data");
-        if (d !== null) {    
+        
+        if (d !== null) {
             this.arrayLocalStorage = JSON.parse(d)
             for (let text of this.arrayLocalStorage) {
                 this.createTag(text)
-            } 
+            }
         }
     }
 
@@ -55,17 +56,17 @@ class TagCreator {
     addTag() {
         const value = this.tagForm.value.trim();
         if (value == '') {
-            return 
+            return
         }
         const index = this.arrayLocalStorage.indexOf(this.tagForm.value);
         if (index !== -1) {
             return
-        } 
+        }
         this.createTag(value)
-        
+
         this.arrayLocalStorage.push(value)
         localStorage.setItem("tag_editor_data", JSON.stringify(this.arrayLocalStorage))
-        
+
         this.tagForm.value = '';
     }
 
@@ -75,15 +76,14 @@ class TagCreator {
 
         const tagValue = parentElem.querySelector('.tag-value');
         const text = tagValue.textContent;
-        
+
         this.removeTagFromLocalStorage(text)
     }
 
     removeTagFromLocalStorage(value) {
-        //
         let d = localStorage.getItem("tag_editor_data");
         d = JSON.parse(d);
-        //
+
         let index = d.indexOf(value);
         d.splice(index, 1);
 
@@ -96,10 +96,8 @@ class TagCreator {
     }
 
     set listTag(values) {
-        const parent = document.querySelector('.tags-area');
-
         while (parent.firstChild) {
-        parent.firstChild.remove()
+            this.tagsArea.firstChild.remove()
         }
 
         this.arrayLocalStorage = [];
@@ -109,18 +107,17 @@ class TagCreator {
             this.createTag(value)
         }
 
-        localStorage.setItem("tag_editor_data", JSON.stringify(this.arrayLocalStorage))   
+        localStorage.setItem("tag_editor_data", JSON.stringify(this.arrayLocalStorage))
     }
 
     set adding(value) {
         this.createTag(value)
-
         this.arrayLocalStorage.push(value)
         localStorage.setItem("tag_editor_data", JSON.stringify(this.arrayLocalStorage))
     }
 
     set remove(value) {
-        const allTagValue = document.querySelectorAll('.tag-value');
+        const allTagValue = this.tagsArea.querySelectorAll('.tag-value');
 
         for (let tagValue of allTagValue) {
             if (tagValue.textContent == value) {
@@ -133,16 +130,18 @@ class TagCreator {
 
     set readonly(value) {
         this.tagForm.readOnly = value;
-        const addButton = document.querySelectorAll(".delete")
+        const addButton = this.tagsArea.querySelectorAll(".delete")
+
         for (let btn of addButton) {
             btn.disabled = valueInput == "install";
         }
-    } 
+    }
 
     changeReadonly(event) {
         const valueInput = event.target.value;
-        const addButton = document.querySelectorAll(".delete")
+        const addButton = this.tagsArea.querySelectorAll(".delete")
         this.tagForm.readOnly = valueInput == "install";
+
         for (let btn of addButton) {
             btn.disabled = valueInput == "install";
         }
